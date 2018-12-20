@@ -20,9 +20,7 @@ const dados={
 
 export default class App extends React.Component {
     render(){
-        return <PlacarContainer partida={dados.partida}
-                                timeCasa={dados.timeCasa}
-                                timeVisitante={dados.timeVisitante}
+        return <PlacarContainer {...dados}
                                 />;
     }
 }

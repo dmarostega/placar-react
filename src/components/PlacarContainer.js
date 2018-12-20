@@ -24,7 +24,11 @@ export default class PlacarContainer extends React.Component{
         });       
     }
     render(){
+        /*  extract */
+         const  { partida,timeCasa,timeVisitante } = this.props; 
+         const style = {float: "left", marginRight: "20px"};
         return(
+           
             <div style={{   
                         borderColor:"black", 
                         borderWidth:"2px",
@@ -32,20 +36,18 @@ export default class PlacarContainer extends React.Component{
                         padding:"15px",
                         width: "400px",
                         margin:"auto"}}>
-                <div style={{float: "left", marginRight: "20px"}}>
+                <div style={style}>
                     <h3>Casa</h3>    
-                    <Time   nome={this.props.timeCasa.nome} 
+                    <Time   nome={timeCasa.nome} 
                             gols={this.state.gols_casa}
                             setGol={this.setGolCasa.bind(this)}/>
                 </div>
-                <div style={{float: "left", marginRight: "20px"}}>
-                    <Partida estadio={this.props.partida.estadio}
-                             data={this.props.partida.data}
-                             horario={this.props.partida.horario}/>
+                <div style={style}>
+                    <Partida {...partida}/>
                 </div>
-                <div style={{float: "left", marginRight: "20px"}}>
+                <div style={style}>
                     <h3>Visitante</h3>
-                    <Time nome={this.props.timeVisitante.nome} 
+                    <Time nome={timeVisitante.nome} 
                           gols={this.state.gols_visitante} 
                           setGol={this.setGolVisitante.bind(this)}/>
                 </div>
