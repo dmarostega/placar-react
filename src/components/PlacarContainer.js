@@ -27,6 +27,8 @@ export default class PlacarContainer extends React.Component{
         /*  extract */
          const  { partida,timeCasa,timeVisitante } = this.props; 
          const style = {float: "left", marginRight: "20px"};
+        
+        
         return(
            
             <div style={{   
